@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\DecisionModel">
+      <UniqueIdentifier>{e625a3e2-2556-4520-ab91-60b92dfe137b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Net">
+      <UniqueIdentifier>{1990d477-8804-4b14-8a05-9a423e9c10c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Net">
+      <UniqueIdentifier>{956d4f0c-ebb6-497f-ac4f-d1c7d7bf1258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SciLib">
+      <UniqueIdentifier>{e85a3850-7eae-44a6-88e6-84302dffe1b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SciLib">
+      <UniqueIdentifier>{f411c5a5-7fdf-4a78-b0e7-12a95fd6e53f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FactorAnalysis">
+      <UniqueIdentifier>{e0c2d1a3-4115-4cb7-a12b-56fdc8edec59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FactorAnalysis">
+      <UniqueIdentifier>{fbcbd083-ea69-4e28-b5fe-9168531b624f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DecisionModel">
+      <UniqueIdentifier>{d5814062-b825-4ed3-a2ec-f5b9a55a0614}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\ENRBF.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\NetBase.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\NetFactory.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DecisionModel\Metrics.cpp">
+      <Filter>Source Files\DecisionModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DecisionModel\DecisionModelBase.cpp">
+      <Filter>Source Files\DecisionModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\LSTM.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\BasisFunctionModule.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\WeightedSumModel.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\WeightFunctionModule.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\TFATradingSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\ModelSelectionHelper.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SciLib\EigenTorchHelper.cpp">
+      <Filter>Source Files\SciLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SciLib\JsonHelper.cpp">
+      <Filter>Source Files\SciLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SciLib\STDHelper.cpp">
+      <Filter>Source Files\SciLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SciLib\MISC.cpp">
+      <Filter>Source Files\SciLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SciLib\Finance.cpp">
+      <Filter>Source Files\SciLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DecisionModel\BasicModule.cpp">
+      <Filter>Source Files\DecisionModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DecisionModel\RatioModuleImpl.cpp">
+      <Filter>Source Files\DecisionModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DecisionModel\CalibrationModuleImpl.cpp">
+      <Filter>Source Files\DecisionModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\ChannelAttention.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\SpatialAttention.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\ChannelSpatialAttention.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Net\ResNet.cpp">
+      <Filter>Source Files\Net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FactorAnalysis\KalmanTFA.cpp">
+      <Filter>Source Files\FactorAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FactorAnalysis\LineraTFA.cpp">
+      <Filter>Source Files\FactorAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FactorAnalysis\NeuralNetTFA.cpp">
+      <Filter>Source Files\FactorAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FactorAnalysis\TFABase.cpp">
+      <Filter>Source Files\FactorAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FactorAnalysis\TFAFactory.cpp">
+      <Filter>Source Files\FactorAnalysis</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DecisionModel\TwoLevelPolicyNetwork.cpp">
+      <Filter>Source Files\DecisionModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DecisionModel\PolicyNetworkBase.cpp">
+      <Filter>Source Files\DecisionModel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DecisionModel\DecisionModelFactory.cpp">
+      <Filter>Source Files\DecisionModel</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\Util.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DecisionModel\DecisionModelBase.hpp">
+      <Filter>Header Files\DecisionModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DecisionModel\Metrics.hpp">
+      <Filter>Header Files\DecisionModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\ENRBF.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\NetBase.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\NetFactory.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\LSTM.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\BasisFunctionModule.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\WeightedSumModel.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\WeightFunctionModule.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\TFATradingSystem.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ModelUtil.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Test.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\ModelSelectionHelper.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\EigenHelper.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\EigenMath.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\EigenML.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\EigenStat.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\EigenTorchHelper.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\JsonHelper.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\MatrixManifolds.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\STDHelper.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\TableWriter.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\MISC.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SciLib\Finance.hpp">
+      <Filter>Header Files\SciLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DecisionModel\BasicModule.hpp">
+      <Filter>Header Files\DecisionModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DecisionModel\CalibrationModuleImpl.hpp">
+      <Filter>Header Files\DecisionModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DecisionModel\RatioModuleImpl.hpp">
+      <Filter>Header Files\DecisionModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\ChannelAttention.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\SpatialAttention.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\ChannelSpatialAttention.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Net\ResNet.hpp">
+      <Filter>Header Files\Net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FactorAnalysis\KalmanTFA.hpp">
+      <Filter>Header Files\FactorAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FactorAnalysis\LinearTFA.hpp">
+      <Filter>Header Files\FactorAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FactorAnalysis\NeuralNetTFA.hpp">
+      <Filter>Header Files\FactorAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FactorAnalysis\TFABase.hpp">
+      <Filter>Header Files\FactorAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FactorAnalysis\TFAFactory.hpp">
+      <Filter>Header Files\FactorAnalysis</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DecisionModel\TwoLevelPolicyNetwork.hpp">
+      <Filter>Header Files\DecisionModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DecisionModel\PolicyNetworkBase.hpp">
+      <Filter>Header Files\DecisionModel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DecisionModel\DecisionModelFactory.hpp">
+      <Filter>Header Files\DecisionModel</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.json">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\ReadMe.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\install.sh">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

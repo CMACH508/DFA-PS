@@ -1,0 +1,68 @@
+{
+    "data_path" : "../../../../../Data/ZhouYao/CN-A",
+    "factor_model" : {
+        "hidden_dim_ratio" : 0.3,
+        "method" : "TFA",
+        "neural_net_TFA" : {
+            "epochs" : 750,
+            "weighted_sum" : {
+                "k" : 30,
+                "weight" : {
+                    "type" : "lstm",
+                    "lstm" : {
+                        "layers" : 5,
+                        "intermediate_output" : 20
+                    }
+                }
+            }
+        }
+    },
+    "decision_model" : {
+        "use_precomputed_hidden_factor" : true,
+        "precomputed_hidden_factor_path" : "backup/factor",
+        "metric" : "basic_gop",
+        "seed" : 789538735,
+        "topk" : 10,
+        "allow_short" : false,
+        "epochs" : 20000,
+        "lr" : 1e-07,
+        "resample_interval" : 50,
+        "pretrain" : {
+            "use" : true,
+            "lr" : 1e-05,
+            "epochs" : 1000,
+            "resample_interval" : 25,
+            "period" : 10
+        },
+        "RatioModule" : {
+            "use" : false,
+            "min_value" : 0.99
+        },
+        "BasisModule" : {
+            "use" : true,
+            "lstm_num_layer" : 8,
+            "lstm_output_channel" : 300
+        },
+        "CalibrationModule" : {
+            "use" : true,
+            "channel" : [
+                32,
+                32,
+                32,
+                16,
+                16,
+                16,
+                8
+            ],
+            "stride" : [
+                2,
+                2,
+                2,
+                1,
+                2,
+                2,
+                2
+            ]
+        }
+    }
+}

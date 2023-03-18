@@ -1,0 +1,14 @@
+{
+    "name": "CN-A",
+    "frequency": "daily",
+    "start": "2010-01-01",
+    "end": "2022-07-01",
+    "split": 20180101,
+    "split__": "use data before (also contain) this day as train dataset.",
+    "[no use]return": "return.csv",
+    "[no use]raw price": "close.csv",
+    "adjusted_price": "close_adj.csv",
+
+    "asset_features": "chlvmp.ts",
+    "asset_features__": "(N, Assets, Channel)"
+}

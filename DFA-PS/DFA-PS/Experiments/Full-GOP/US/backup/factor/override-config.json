@@ -1,0 +1,80 @@
+{
+    "data_path" : "../../../../../Data/ZhouYao/US",
+    "factor_model" : {
+        "hidden_dim_ratio" : 0.3,
+        "method" : "TFA",
+        "neural_net_TFA" : {
+            "epochs" : 1000,
+            "weighted_sum" : {
+                "k" : 30,
+                "weight" : {
+                    "type" : "lstm",
+                    "lstm" : {
+                        "layers" : 5,
+                        "intermediate_output" : 20
+                    }
+                }
+            }
+        }
+    },
+    "decision_model" : {
+        "use_precomputed_hidden_factor" : true,
+        "precomputed_hidden_factor_path" : "backup/factor",
+        "metric" : "basic_gop",
+        "allow_short" : true,
+        "topk" : 10,
+        "seed" : 150,
+        "epochs" : 30000,
+        "lr" : 1e-07,
+        "resample_interval" : 100,
+        "pretrain" : {
+            "use" : true,
+            "lr" : 1e-05,
+            "epochs" : 1000,
+            "resample_interval" : 25,
+            "period" : 10
+        },
+        "RatioModule" : {
+            "use" : true,
+            "min_value" : 0.1,
+            "channel" : [
+                8,
+                16,
+                16,
+                8
+            ],
+            "stride" : [
+                2,
+                2,
+                2,
+                1
+            ]
+        },
+        "BasisModule" : {
+            "use" : true,
+            "lstm_num_layer" : 8,
+            "lstm_output_channel" : 50
+        },
+        "CalibrationModule" : {
+            "use" : true,
+            "channel" : [
+                32,
+                32,
+                32,
+                16,
+                16,
+                16,
+                8
+            ],
+            "stride" : [
+                2,
+                2,
+                2,
+                1,
+                2,
+                2,
+                2
+            ]
+        }
+    }
+}

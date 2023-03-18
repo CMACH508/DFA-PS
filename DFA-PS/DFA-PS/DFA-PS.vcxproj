@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{181e64a6-7f85-441c-ad70-ada693e1a47b}</ProjectGuid>
+    <RootNamespace>NeuralNetTFA</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>DFA-PS</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseInteloneMKL>Parallel</UseInteloneMKL>
+    <UseILP64Interfaces1A>true</UseILP64Interfaces1A>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseInteloneMKL>Parallel</UseInteloneMKL>
+    <UseILP64Interfaces1A>true</UseILP64Interfaces1A>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\PropertySheet-debug.props" />
+    <Import Project="..\torch-debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\PropertySheet.props" />
+    <Import Project="..\torch.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>../Common;../../libtorch/include;../../libtorch/include/torch/csrc/api/include;$(IncludePath)</IncludePath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <OpenMPSupport>true</OpenMPSupport>
+      <EnableModules>false</EnableModules>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\DecisionModel\BasicModule.cpp" />
+    <ClCompile Include="..\Common\DecisionModel\DecisionModelBase.cpp" />
+    <ClCompile Include="..\Common\DecisionModel\DecisionModelFactory.cpp" />
+    <ClCompile Include="..\Common\DecisionModel\TwoLevelPolicyNetwork.cpp" />
+    <ClCompile Include="..\Common\DecisionModel\PolicyNetworkBase.cpp" />
+    <ClCompile Include="..\Common\DecisionModel\RatioModuleImpl.cpp" />
+    <ClCompile Include="..\Common\DecisionModel\Metrics.cpp" />
+    <ClCompile Include="..\Common\DecisionModel\CalibrationModuleImpl.cpp" />
+    <ClCompile Include="..\Common\FactorAnalysis\KalmanTFA.cpp" />
+    <ClCompile Include="..\Common\FactorAnalysis\LineraTFA.cpp" />
+    <ClCompile Include="..\Common\FactorAnalysis\NeuralNetTFA.cpp" />
+    <ClCompile Include="..\Common\FactorAnalysis\TFABase.cpp" />
+    <ClCompile Include="..\Common\FactorAnalysis\TFAFactory.cpp" />
+    <ClCompile Include="..\Common\Net\BasisFunctionModule.cpp" />
+    <ClCompile Include="..\Common\Net\ChannelAttention.cpp" />
+    <ClCompile Include="..\Common\Net\ChannelSpatialAttention.cpp" />
+    <ClCompile Include="..\Common\Net\ENRBF.cpp" />
+    <ClCompile Include="..\Common\Net\LSTM.cpp" />
+    <ClCompile Include="..\Common\Net\ModelSelectionHelper.cpp" />
+    <ClCompile Include="..\Common\Net\NetBase.cpp" />
+    <ClCompile Include="..\Common\Net\NetFactory.cpp" />
+    <ClCompile Include="..\Common\Net\ResNet.cpp" />
+    <ClCompile Include="..\Common\Net\SpatialAttention.cpp" />
+    <ClCompile Include="..\Common\Net\WeightedSumModel.cpp" />
+    <ClCompile Include="..\Common\Net\WeightFunctionModule.cpp" />
+    <ClCompile Include="..\Common\SciLib\EigenTorchHelper.cpp" />
+    <ClCompile Include="..\Common\SciLib\Finance.cpp" />
+    <ClCompile Include="..\Common\SciLib\JsonHelper.cpp" />
+    <ClCompile Include="..\Common\SciLib\MISC.cpp" />
+    <ClCompile Include="..\Common\SciLib\STDHelper.cpp" />
+    <ClCompile Include="..\Common\stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Common\Test.cpp" />
+    <ClCompile Include="..\Common\TFATradingSystem.cpp" />
+    <ClCompile Include="..\Common\Util.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\DecisionModel\BasicModule.hpp" />
+    <ClInclude Include="..\Common\DecisionModel\DecisionModelBase.hpp" />
+    <ClInclude Include="..\Common\DecisionModel\DecisionModelFactory.hpp" />
+    <ClInclude Include="..\Common\DecisionModel\TwoLevelPolicyNetwork.hpp" />
+    <ClInclude Include="..\Common\DecisionModel\PolicyNetworkBase.hpp" />
+    <ClInclude Include="..\Common\DecisionModel\RatioModuleImpl.hpp" />
+    <ClInclude Include="..\Common\DecisionModel\Metrics.hpp" />
+    <ClInclude Include="..\Common\DecisionModel\CalibrationModuleImpl.hpp" />
+    <ClInclude Include="..\Common\FactorAnalysis\KalmanTFA.hpp" />
+    <ClInclude Include="..\Common\FactorAnalysis\LinearTFA.hpp" />
+    <ClInclude Include="..\Common\FactorAnalysis\NeuralNetTFA.hpp" />
+    <ClInclude Include="..\Common\FactorAnalysis\TFABase.hpp" />
+    <ClInclude Include="..\Common\FactorAnalysis\TFAFactory.hpp" />
+    <ClInclude Include="..\Common\ModelUtil.hpp" />
+    <ClInclude Include="..\Common\Net\BasisFunctionModule.hpp" />
+    <ClInclude Include="..\Common\Net\ChannelAttention.hpp" />
+    <ClInclude Include="..\Common\Net\ChannelSpatialAttention.hpp" />
+    <ClInclude Include="..\Common\Net\ENRBF.hpp" />
+    <ClInclude Include="..\Common\Net\LSTM.hpp" />
+    <ClInclude Include="..\Common\Net\ModelSelectionHelper.hpp" />
+    <ClInclude Include="..\Common\Net\NetBase.hpp" />
+    <ClInclude Include="..\Common\Net\NetFactory.hpp" />
+    <ClInclude Include="..\Common\Net\ResNet.hpp" />
+    <ClInclude Include="..\Common\Net\SpatialAttention.hpp" />
+    <ClInclude Include="..\Common\Net\WeightedSumModel.hpp" />
+    <ClInclude Include="..\Common\Net\WeightFunctionModule.hpp" />
+    <ClInclude Include="..\Common\SciLib\EigenHelper.hpp" />
+    <ClInclude Include="..\Common\SciLib\EigenMath.hpp" />
+    <ClInclude Include="..\Common\SciLib\EigenML.hpp" />
+    <ClInclude Include="..\Common\SciLib\EigenStat.hpp" />
+    <ClInclude Include="..\Common\SciLib\EigenTorchHelper.hpp" />
+    <ClInclude Include="..\Common\SciLib\Finance.hpp" />
+    <ClInclude Include="..\Common\SciLib\JsonHelper.hpp" />
+    <ClInclude Include="..\Common\SciLib\MatrixManifolds.hpp" />
+    <ClInclude Include="..\Common\SciLib\MISC.hpp" />
+    <ClInclude Include="..\Common\SciLib\STDHelper.hpp" />
+    <ClInclude Include="..\Common\SciLib\TableWriter.hpp" />
+    <ClInclude Include="..\Common\stdafx.h" />
+    <ClInclude Include="..\Common\Test.hpp" />
+    <ClInclude Include="..\Common\TFATradingSystem.hpp" />
+    <ClInclude Include="..\Common\Util.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\install.sh" />
+    <None Include="..\ReadMe.md" />
+    <None Include="config.json" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

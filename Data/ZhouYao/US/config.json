@@ -1,0 +1,14 @@
+{
+    "split": 20180101,
+    "asset_features": "chlvmp.ts",
+    "asset_features__": "(N, Assets, Channel), currently Channel represents close, high, low, volume, market value, pe.",
+    "adjusted_price": "close_adj.csv",
+
+    "name": "US",
+    "frequency": "daily",
+    "start": "2010-01-01",
+    "end": "2022-07-01",
+    "split__": "use data before (also contain) this day as train dataset.",
+    "[no use]return": "return.csv",
+    "[no use]raw price": "close.csv"
+}

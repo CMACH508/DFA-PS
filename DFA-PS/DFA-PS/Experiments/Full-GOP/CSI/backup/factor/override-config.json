@@ -1,0 +1,77 @@
+{
+    "data_path" : "../../../../../Data/Wang/CSI",
+    "remove_abnormal_assets" : false,
+    "factor_model" : {
+        "hidden_dim_ratio" : 0.6,
+        "method" : "TFA",
+        "neural_net_TFA" : {
+            "epochs" : 750,
+            "weighted_sum" : {
+                "k" : 20,
+                "weight" : {
+                    "type" : "lstm",
+                    "lstm" : {
+                        "layers" : 5,
+                        "intermediate_output" : 10
+                    }
+                }
+            }
+        }
+    },
+    "decision_model" : {
+        "use_precomputed_hidden_factor" : true,
+        "precomputed_hidden_factor_path" : "backup/factor",
+        "metric" : "basic_gop",
+        "allow_short" : false,
+        "seed" : 100,
+        "topk" : 5,
+        "epochs" : 30000,
+        "lr" : 1e-07,
+        "resample_interval" : 100,
+        "pretrain" : {
+            "use" : true,
+            "lr" : 1e-05,
+            "epochs" : 1000,
+            "resample_interval" : 25,
+            "period" : 10
+        },
+        "RatioModule" : {
+            "use" : false,
+            "min_value" : 0.99,
+            "channel" : [
+                8,
+                16,
+                16
+            ],
+            "stride" : [
+                2,
+                2,
+                1
+            ]
+        },
+        "BasisModule" : {
+            "use" : true,
+            "lstm_num_layer" : 8,
+            "lstm_output_channel" : 40
+        },
+        "CalibrationModule" : {
+            "use" : true,
+            "channel" : [
+                32,
+                32,
+                16,
+                16,
+                16,
+                16
+            ],
+            "stride" : [
+                2,
+                2,
+                2,
+                1,
+                1,
+                1
+            ]
+        }
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "data_path" : "/home/zhouyao/TFA/Publish/DFA-PS/DFA-PS/Experiments/Full-GOP/DJIA/../../../../../Data/Wang/DJIA",
+    "remove_abnormal_assets" : false,
+    "scale_returns" : 100,
+    "scale_returns__" : "As returns data is too small, use a multiplier to scale returns data.",
+    "output_file" : "portfolio.csv",
+    "scene" : 1,
+    "scene__comment" : "Availiable:1-7, 0. If is scene1-7, then some following settings may not be used.",
+    "factor_model" : {
+        "hidden_dim_ratio" : 0.6,
+        "hidden_dim_ratio__" : "Start from hidden_dim of initial_hidden_dim_factor*total_assets to do selection. It will override hidden_dim.",
+        "seed" : 0,
+        "method" : "TFA",
+        "method__" : "TFA(NeuralNetTFA),FA, kalman,kalman-RTS, linearTFA, linearTFA-RI-smoothing(Reverse Inference), linearTFA-IO-smoothing-1(Intertemporal Optimization)",
+        "fix_Sx" : false,
+        "max_batch_size" : 9000,
+        "test_interval" : 5,
+        "lr" : 0.01,
+        "re_orthogonalize" : 5,
+        "re_orthogonalize__" : "Make parms.A orthogonal every some epochs to avoid numeric instability. If negative, do nothing. This is important especially when dimension is high.",
+        "model_selection" : false,
+        "model_selection__" : "Automatic model selection.",
+        "min_hidden_dim" : 0.1,
+        "min_hidden_dim__" : "If fraction of hidden dimension is less than it. Then don't do selection.",
+        "threshold" : 0.005,
+        "threshold__" : "Component of variance which is less thatn thresold*mac_variance will be removed.",
+        "kalman_TFA" : {
+            "full_B" : false
+        },
+        "native_TFA" : {
+            "lr" : 0.001,
+            "epochs" : 20,
+            "init_policy" : "random_uniform",
+            "init_policy_comment" : "Valid values: fixed, random_uniform, random_normal",
+            "fix_Sigma_epsilon" : false
+        },
+        "neural_net_TFA" : {
+            "use_gpu" : false,
+            "window" : 1,
+            "train_lr" : 0.001,
+            "train_steps" : 5,
+            "buffer_size" : 10000,
+            "epochs" : 750,
+            "subtrain_epochs" : 20,
+            "subtrain_lr" : 0.001,
+            "net_type" : "weighted_sum",
+            "__net_type" : "[weighted_sum]. [enrbf]. [native]: pure linear.",
+            "weighted_sum" : {
+                "k" : 10,
+                "basis" : {
+                    "type" : "simple-linear",
+                    "type__" : "simple-linear, simple-linear-scale"
+                },
+                "weight" : {
+                    "type" : "lstm",
+                    "lstm" : {
+                        "layers" : 5,
+                        "intermediate_output" : 10
+                    }
+                }
+            },
+            "enrbf" : {
+                "k" : 4
+            }
+        }
+    },
+    "decision_model" : {
+        "use_precomputed_hidden_factor" : true,
+        "precomputed_hidden_factor_path" : "/home/zhouyao/TFA/Publish/DFA-PS/DFA-PS/Experiments/Full-GOP/DJIA/backup/factor",
+        "holding_period" : 20,
+        "only_use_periodic_price" : true,
+        "only_use_periodic_price__" : "If set to true, then only calculate returns every holding_period.",
+        "window_type" : "backward",
+        "window_type__" : "forward, backward: If set to forward, then use predicted hidden factor to make a decision. Otherwise use history hidden factors.",
+        "window" : 5,
+        "risk_free" : 0,
+        "cost" : 0.001,
+        "initial_cash" : 1,
+        "allow_short" : true,
+        "topk" : 5,
+        "topk__" : "number of selected assets. If no short, then it's total number. If short, total assets is 2*topk.",
+        "metric" : "basic_gop",
+        "metric__" : "Used to train decision model. Valid values: sharpe_ratio, simple_up_down_risk,pure_return,return_to_mdd,basic_gop",
+        "use_gpu" : true,
+        "seed" : 100,
+        "test_on_train_dataset" : false,
+        "test_on_train_dataset___" : "For debugging purpose. Better set to false when running",
+        "lr" : 1e-07,
+        "epochs" : 20000,
+        "max_batch_size" : 64,
+        "resample_interval" : 100,
+        "__resample_interval" : "Resample train dataset every some epochs.",
+        "write_test_portfolio_interval" : -1,
+        "__write_test_portfolio_interval" : "Write test port folio every some epochs. May slow down performance.",
+        "pretrain" : {
+            "use" : true,
+            "lr" : 1e-05,
+            "epochs" : 1000,
+            "resample_interval" : 25,
+            "period" : 10
+        },
+        "RatioModule" : {
+            "use" : true,
+            "min_value" : 0.1,
+            "channel" : [
+                8,
+                8,
+                16,
+                8
+            ],
+            "stride" : [
+                2,
+                2,
+                1,
+                1
+            ],
+            "linear_seq_size" : [
+                5,
+                3,
+                1
+            ]
+        },
+        "BasisModule" : {
+            "use" : true,
+            "lstm_num_layer" : 6,
+            "lstm_output_channel" : 16
+        },
+        "CalibrationModule" : {
+            "use" : true,
+            "channel" : [
+                32,
+                32,
+                16,
+                16
+            ],
+            "stride" : [
+                2,
+                2,
+                2,
+                2
+            ]
+        }
+    }
+}
